@@ -24,7 +24,7 @@
 #
 # [*config_hash*]
 #   Consul-template configuration options. See https://github.com/hashicorp/consul-template#options
-# 
+#
 # [*config_mode*]
 #   Set config file mode
 #
@@ -79,6 +79,7 @@ class consul_template (
   $manage_user        = $consul_template::params::manage_user,
   $manage_group       = $consul_template::params::manage_group,
   $watches            = {},
+  $install_service_file = true,
 ) inherits ::consul_template::params {
 
   validate_bool($purge_config_dir)
@@ -89,6 +90,7 @@ class consul_template (
   validate_hash($watches)
   validate_hash($config_hash)
   validate_hash($config_defaults)
+  validate_bool($install_service_file)
 
   $real_download_url = pick($download_url, "${download_url_base}${version}/${package_name}_${version}_${os}_${arch}.${download_extension}")
 
