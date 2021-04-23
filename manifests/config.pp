@@ -7,7 +7,7 @@ class consul_template::config (
   $purge       = true,
 ) {
   # Using our parent module's pretty_config & pretty_config_indent just because
-  $content_full = consul_sorted_json($config_hash, $consul::pretty_config, $consul::pretty_config_indent)
+  $content_full = consul::sorted_json($config_hash, $consul::pretty_config, $consul::pretty_config_indent)
   # remove the closing } and it's surrounding newlines
   $content = regsubst($content_full, "\n}\n$", '')
 
