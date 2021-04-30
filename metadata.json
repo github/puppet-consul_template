@@ -1,5 +1,5 @@
 {
-  "name": "gdhbashton-consul_template",
+  "name": "github-consul_template",
   "version": "0.2.8",
   "author": "gdhbashton",
   "summary": "Install and manage Consul Template and its jobs",
@@ -28,6 +28,7 @@
   "dependencies": [
     { "name": "puppetlabs/stdlib", "version_requirement": ">=1.0.0" },
     { "name": "puppetlabs/concat", "version_requirement": ">= 1.1.0" },
-    { "name": "nanliu/staging", "version_requirement": ">= 0.4.0" }
+    { "name": "nanliu/staging", "version_requirement": ">= 0.4.0" },
+    { "name": "github/consul", "version_requirement": ">= 1.0.0" }
   ]
 }
